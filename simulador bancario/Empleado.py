@@ -1,14 +1,27 @@
+from Fecha import Fecha
+
 class Empleado:
     """-------------------------------
     #Atributos
     ----------------------------------"""
-    nombre= "Carlos"
-    apellido= "Mina"
+
+    nombre = ""
+    apellido = ""
+
     """-------------------------------
     #1 Masculino y 2 Femenino
     ----------------------------------"""
-    sexo=0
-    salario=0
+    
+    sexo = 0
+    salario = 0
+    
+    """-------------------------------
+    #Asociaciones
+    ----------------------------------"""
+    
+    fechaNacimiento = Fecha()
+    fechaIngreso = Fecha()
+    
     """-------------------------------
     #Metodos
     ----------------------------------"""
@@ -38,10 +51,34 @@ class Empleado:
         return self.nombre +" "+self.apellido
     
     def AumentoSalario(self):
-        nSalario= self.salario * 0.05
-        nSalario= nSalario + self.salario
+        nSalario = self.salario * 0.05
+        nSalario = nSalario + self.salario
         self.salario = nSalario 
 
         return "El nuevo salario es de: "+self.salario 
+
+    def DuplicarSalario(self):
+        #Aqui va el codigo del metodo
+        #Forma 1
+        #self.Salario= self.salario*2
+        #Forma 2 pro
+        self.Salario *= 2
+
+    def CalcularSalarioAnual(self):
+        #Aqui va el codigo del metodo
+        #Forma1
+        SalarioAnual = self.salario*12
+        return SalarioAnual
+        #Forma 2 
+        #Retorn self.salario*12
+
+    def ConsultarDiaCumpleanios(self):
+        return "El dia de su cumpleaños es: "+self.fechaNacimiento.ConsultarDia()
     
-    
+    def CalcularImpuesto(self):
+        
+        #Forma 1
+        total = self.CalcularSalarioAnual()
+        return (total * 19.5) / 100
+        #Forma 2 
+        #return self.CalcularSalarioAnual() * 0.105
