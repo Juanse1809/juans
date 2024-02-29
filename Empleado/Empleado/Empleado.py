@@ -26,6 +26,12 @@ class Empleado:
     #Metodos
     ----------------------------------"""
 
+    def __init__(self,nombre,apellido,sexo,salario):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.sexo = sexo
+        self.salario = salario
+
     def CambiarSalario(self, nuevoSalario):
         #Aqui va el codigo del metodo
         return 0
@@ -82,3 +88,5 @@ class Empleado:
         return (total * 19.5) / 100
         #Forma 2 
         #return self.CalcularSalarioAnual() * 0.105
+    
+    
